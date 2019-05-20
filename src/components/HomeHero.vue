@@ -1,11 +1,13 @@
 <template>
     <section class="hero">
       <div class="container">
-        <h1 class="title is-1">Hello there, I'm Matt!</h1>
-        <h2 class="subtitle is-2">I'm a software engineer.</h2>
-        <span class="icon">
-          <i class="fas fa-angle-down fa-4x"></i>        
-        </span>
+        <h1 class="title is-1 animated fadeInDown delay-1s">Hello there, I'm Matt!</h1>
+        <h2 class="subtitle is-2 animated fadeIn delay-2s">I'm a software engineer.</h2>
+        <a href="#AboutSection" class="animated fadeInUp delay-3s">
+          <span class="icon">
+            <i class="fas fa-angle-down fa-4x"></i>        
+          </span>
+        </a>
       </div>
     </section>
 </template>
