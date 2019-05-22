@@ -1,9 +1,12 @@
-<template>
+<template v-if="handleScroll">
     <section class="section">
-        <h3 class="subtitle is-3 animated fadeInLeft">
+        <h3 class="subtitle is-3 animated fadeInLeft" id="aboutSubtitle">
             About myself
         </h3>
-        <p class="subtitle is-5 animated fadeInLeftBig delay-1s">
+        <p
+            class="subtitle is-5 animated fadeInLeftBig delay-1s"
+            id="aboutParagraph"
+        >
             I'm currently a software engineer working at AT&T. I started my
             career in January 2018 after graduating from college. I graduated
             from the University of Texas at San Antonio with a Bachelor's of
@@ -16,7 +19,21 @@
 
 <script>
 export default {
-    name: 'About'
+    name: 'About',
+    methods: {
+        handleScroll: () => {
+            aboutSubtitle.removeAttribute('hidden');
+            aboutParagraph.removeAttribute('hidden');
+        }
+    },
+    mounted() {
+        document.addEventListener('scroll', this.handleScroll);
+        var aboutSubtitle = document.getElementById('aboutSubtitle');
+        var aboutParagraph = document.getElementById('aboutParagraph');
+        aboutSubtitle.hidden = true;
+        aboutParagraph.hidden = true;
+        
+    }
 };
 </script>
 

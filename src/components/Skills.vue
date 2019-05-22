@@ -4,7 +4,7 @@
             My Skills
         </h3>
         <div class="columns">
-            <div class="column animated bounceIn">
+            <div class="column animated bounceIn delay-2s" id="frontendColumn">
                 <div class="card">
                     <div class="card-content">
                         <div class="content">
@@ -25,7 +25,7 @@
                     </div>
                 </div>
             </div>
-            <div class="column animated bounceIn delay-1s">
+            <div class="column animated bounceIn delay-3s" id="backendColumn">
                 <div class="card">
                     <div class="card-content">
                         <div class="content">
@@ -50,7 +50,21 @@
 
 <script>
 export default {
-    name: 'Skills'
+    name: 'Skills',
+    methods: {
+        handleScroll: () => {
+            frontendColumn.removeAttribute('hidden');
+            backendColumn.removeAttribute('hidden');
+        }
+    },
+    mounted() {
+        document.addEventListener('scroll', this.handleScroll);
+        var frontendColumn = document.getElementById('frontendColumn');
+        frontendColumn.scrollIntoView
+        var backendColumn = document.getElementById('backendColumn');
+        frontendColumn.hidden = true;
+        backendColumn.hidden = true;
+    }
 };
 </script>
 
