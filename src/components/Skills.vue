@@ -13,7 +13,9 @@
                             <span class="tag">HTML</span>
                             <span class="tag">CSS</span>
                             <span class="tag">Javascript</span>
-                            <h4 class="subtitle is-5" style="margin-top: 3%;">Frameworks</h4>
+                            <h4 class="subtitle is-5" style="margin-top: 3%;">
+                                Frameworks
+                            </h4>
                             <span class="tag">Vue.js</span>
                             <span class="tag">React.js</span>
                             <span class="tag">React Native</span>
@@ -32,7 +34,9 @@
                             <span class="tag">Python</span>
                             <span class="tag">Java</span>
                             <span class="tag">Javascript</span>
-                            <h4 class="subtitle is-5" style="margin-top: 3%;">Frameworks</h4>
+                            <h4 class="subtitle is-5" style="margin-top: 3%;">
+                                Frameworks
+                            </h4>
                             <span class="tag">Flask</span>
                             <span class="tag">Spring Boot</span>
                             <span class="tag">Node.js Express</span>

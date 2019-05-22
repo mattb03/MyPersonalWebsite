@@ -1,14 +1,18 @@
 <template>
     <section class="hero">
-      <div class="container">
-        <h1 class="title is-1 animated fadeInDown delay-1s">Hello there, I'm Matt!</h1>
-        <h2 class="subtitle is-2 animated fadeIn delay-2s">I'm a software engineer.</h2>
-        <a href="#AboutSection" class="animated fadeInUp delay-3s">
-          <span class="icon">
-            <i class="fas fa-angle-down fa-4x"></i>        
-          </span>
-        </a>
-      </div>
+        <div class="container">
+            <h1 class="title is-1 animated fadeInDown delay-1s">
+                Hello there, I'm Matt!
+            </h1>
+            <h2 class="subtitle is-2 animated fadeIn delay-2s">
+                I'm a software engineer.
+            </h2>
+            <a href="#AboutSection" class="animated fadeInUp delay-3s">
+                <span class="icon">
+                    <i class="fas fa-angle-down fa-4x"></i>
+                </span>
+            </a>
+        </div>
     </section>
 </template>
 
@@ -29,15 +33,16 @@ export default {
   image3: KidY3t8O4PE
 */
 .container {
-  margin: 15% 30% 30% 30%;
-  flex-direction: column;
+    margin: 15% 30% 30% 30%;
+    flex-direction: column;
 }
-.title, .subtitle {
-  color: darkgrey;
+.title,
+.subtitle {
+    color: darkgrey;
 }
 .icon {
-  color: darkgrey;
-  margin-top: 50%;
+    color: darkgrey;
+    margin-top: 50%;
 }
 .hero {
     height: 100vh;
