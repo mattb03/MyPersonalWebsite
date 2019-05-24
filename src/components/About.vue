@@ -1,6 +1,6 @@
 <template>
     <section class="section">
-        <h3 class="subtitle is-3 animated fadeInLeft" id="aboutSubtitle" hidden>
+        <h3 class="subtitle is-3" id="aboutSubtitle" hidden>
             About myself
         </h3>
         <p
