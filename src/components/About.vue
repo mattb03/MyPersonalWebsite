@@ -1,5 +1,5 @@
 <template>
-    <section @scroll="handleScroll" class="section">
+    <section class="section">
         <h3 class="subtitle is-3 animated fadeInLeft" id="aboutSubtitle" hidden>
             About myself
         </h3>
@@ -21,11 +21,6 @@
 <script>
 export default {
     name: 'About',
-    data: function(){
-        return {
-            isVisible: false
-        };
-    },
     methods: {
         handleScroll: function() {
             var rect = document.getElementById('aboutSubtitle').getBoundingClientRect();

@@ -4,8 +4,8 @@
             My Skills
         </h3>
         <div class="columns">
-            <div class="column animated bounceIn delay-2s" id="frontendColumn">
-                <div class="card">
+            <div class="column">
+                <div class="card animated bounceIn delay-2s" id="frontendCard" hidden>
                     <div class="card-content">
                         <div class="content">
                             <h3 class="subtitle is-3">Frontend</h3>
@@ -25,8 +25,8 @@
                     </div>
                 </div>
             </div>
-            <div class="column animated bounceIn delay-3s" id="backendColumn">
-                <div class="card">
+            <div class="column">
+                <div class="card animated bounceIn delay-3s" id="backendCard" hidden>
                     <div class="card-content">
                         <div class="content">
                             <h3 class="subtitle is-3">Backend</h3>
@@ -52,18 +52,19 @@
 export default {
     name: 'Skills',
     methods: {
-        handleScroll: () => {
-            frontendColumn.removeAttribute('hidden');
-            backendColumn.removeAttribute('hidden');
+        handleScroll: function() {
+            var rect = document.getElementById('frontendCard').getBoundingClientRect();
+            if ((rect.top >= 0) && (rect.bottom <= window.innerHeight)) {
+                document.getElementById('frontendCard').removeAttribute('hidden');
+            }
+            rect = document.getElementById('backendCard').getBoundingClientRect();
+            if ((rect.top >= 0) && (rect.bottom <= window.innerHeight)) {
+                document.getElementById('backendCard').removeAttribute('hidden');
+            }
         }
     },
     mounted() {
         document.addEventListener('scroll', this.handleScroll);
-        var frontendColumn = document.getElementById('frontendColumn');
-        frontendColumn.scrollIntoView
-        var backendColumn = document.getElementById('backendColumn');
-        frontendColumn.hidden = true;
-        backendColumn.hidden = true;
     }
 };
 </script>
