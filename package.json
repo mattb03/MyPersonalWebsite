@@ -12,6 +12,8 @@
     "bulma": "^0.7.5",
     "core-js": "^2.6.5",
     "vue": "^2.6.10",
+    "vue-check-view": "^0.3.0",
+    "vue-observe-visibility": "^0.4.4",
     "vue-router": "^3.0.3",
     "vuex": "^3.0.1",
     "zenscroll": "^4.0.2"

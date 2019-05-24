@@ -1,11 +1,12 @@
-<template v-if="handleScroll">
-    <section class="section">
-        <h3 class="subtitle is-3 animated fadeInLeft" id="aboutSubtitle">
+<template>
+    <section @scroll="handleScroll" class="section">
+        <h3 class="subtitle is-3 animated fadeInLeft" id="aboutSubtitle" hidden>
             About myself
         </h3>
         <p
             class="subtitle is-5 animated fadeInLeftBig delay-1s"
             id="aboutParagraph"
+            hidden
         >
             I'm currently a software engineer working at AT&T. I started my
             career in January 2018 after graduating from college. I graduated
@@ -20,19 +21,25 @@
 <script>
 export default {
     name: 'About',
+    data: function(){
+        return {
+            isVisible: false
+        };
+    },
     methods: {
-        handleScroll: () => {
-            aboutSubtitle.removeAttribute('hidden');
-            aboutParagraph.removeAttribute('hidden');
+        handleScroll: function() {
+            var rect = document.getElementById('aboutSubtitle').getBoundingClientRect();
+            if ((rect.top >= 0) && (rect.bottom <= window.innerHeight)) {
+                document.getElementById('aboutSubtitle').removeAttribute('hidden');
+            }
+            rect = document.getElementById('aboutParagraph').getBoundingClientRect();
+            if ((rect.top >= 0) && (rect.bottom <= window.innerHeight)) {
+                document.getElementById('aboutParagraph').removeAttribute('hidden');
+            }
         }
     },
     mounted() {
         document.addEventListener('scroll', this.handleScroll);
-        var aboutSubtitle = document.getElementById('aboutSubtitle');
-        var aboutParagraph = document.getElementById('aboutParagraph');
-        aboutSubtitle.hidden = true;
-        aboutParagraph.hidden = true;
-        
     }
 };
 </script>
