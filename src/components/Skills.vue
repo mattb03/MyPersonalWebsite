@@ -3,7 +3,7 @@
         <h3 class="subtitle is-3">
             My Skills
         </h3>
-        <div class="columns">
+        <div class="columns" id="skillsColumns">
             <div class="column">
                 <div class="card animated bounceIn delay-2s" id="frontendCard" hidden>
                     <div class="card-content">
@@ -53,12 +53,11 @@ export default {
     name: 'Skills',
     methods: {
         handleScroll: function() {
-            var rect = document.getElementById('frontendCard').getBoundingClientRect();
+            //var rect = document.getElementById('frontendCard').getBoundingClientRect();
+            var rect = document.getElementById('skillsColumns').getBoundingClientRect();
             if ((rect.top >= 0) && (rect.bottom <= window.innerHeight)) {
+                alert('cards column in view');
                 document.getElementById('frontendCard').removeAttribute('hidden');
-            }
-            rect = document.getElementById('backendCard').getBoundingClientRect();
-            if ((rect.top >= 0) && (rect.bottom <= window.innerHeight)) {
                 document.getElementById('backendCard').removeAttribute('hidden');
             }
         }
