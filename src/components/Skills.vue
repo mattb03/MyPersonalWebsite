@@ -56,7 +56,6 @@ export default {
             //var rect = document.getElementById('frontendCard').getBoundingClientRect();
             var rect = document.getElementById('skillsColumns').getBoundingClientRect();
             if ((rect.top >= 0) && (rect.bottom <= window.innerHeight)) {
-                alert('cards column in view');
                 document.getElementById('frontendCard').removeAttribute('hidden');
                 document.getElementById('backendCard').removeAttribute('hidden');
             }
