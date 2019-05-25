@@ -45,6 +45,7 @@ export default {
   image2: ddLiNMqWAOM
   image3: KidY3t8O4PE
 */
+
 .container {
     margin: 15% 30% 30% 30%;
     flex-direction: column;
@@ -59,13 +60,33 @@ export default {
 }
 .hero {
     height: 100vh;
-    background: url('http://source.unsplash.com/ddLiNMqWAOM');
+    background: url('../assets/mountaincropped.jpeg');
     background-size: cover;
     /*
     width: 100%;
     height: 100%;
     max-height: 100%;
     */
+}
+@media screen and (min-width: 320px) and (orientation:portrait) {
+    .hero {
+        height: 100vh;
+        background: url('../assets/mountaincropped.jpeg');
+        background-size: cover;
+    }
+    .icon {
+        margin-top: 130%;
+    }
+}
+@media screen and (min-width: 320px) and (orientation:landscape) {
+    .hero {
+        height: 100vh;
+        background: url('../assets/mountain.jpeg');
+        background-size: cover;
+    }
+    .icon {
+        margin-top: 25%;
+    }
 }
 /**
   .hero {

@@ -6,7 +6,7 @@
         <div class="columns" id="skillsColumns">
             <div class="column">
                 <div
-                    class="card animated bounceIn delay-2s"
+                    class="card animated bounceIn delay-1s"
                     id="frontendCard"
                     hidden
                 >
@@ -31,7 +31,7 @@
             </div>
             <div class="column">
                 <div
-                    class="card animated bounceIn delay-3s"
+                    class="card animated bounceIn delay-2s"
                     id="backendCard"
                     hidden
                 >
