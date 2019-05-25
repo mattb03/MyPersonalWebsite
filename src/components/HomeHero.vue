@@ -1,15 +1,15 @@
 <template>
     <section class="hero">
         <div class="container">
-            <h1 class="title is-1 animated fadeInDown delay-1s">
+            <h1 class="title animated fadeInDown delay-1s" id="helloTitle">
                 Hello there, I'm Matt!
             </h1>
-            <h2 class="subtitle is-2 animated fadeIn delay-2s">
+            <h2 class="subtitle animated fadeIn delay-2s" id="introSubtitle">
                 I'm a software engineer.
             </h2>
             <a href="#AboutSection" class="animated fadeInUp delay-3s">
                 <span class="icon">
-                    <i class="fas fa-angle-down fa-4x"></i>
+                    <i class="fas fa-angle-down" id="arrowIcon"></i>
                 </span>
             </a>
         </div>
@@ -17,10 +17,23 @@
 </template>
 
 <script>
+
+
+
 export default {
     name: 'HomeHero',
-    props: {
-        msg: String
+    mounted() {
+        var viewportWidth = window.innerWidth || document.documentElement.clientWidth;
+
+        if (viewportWidth > 640) {
+            document.getElementById('helloTitle').classList.add('is-1');
+            document.getElementById('introSubtitle').classList.add('is-2');
+            document.getElementById('arrowIcon').classList.add('fa-4x');
+        } else {
+            document.getElementById('helloTitle').classList.add('is-3');
+            document.getElementById('introSubtitle').classList.add('is-4');
+            document.getElementById('arrowIcon').classList.add('fa-2x');
+        }
     }
 };
 </script>

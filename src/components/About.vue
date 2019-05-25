@@ -23,13 +23,21 @@ export default {
     name: 'About',
     methods: {
         handleScroll: function() {
-            var rect = document.getElementById('aboutSubtitle').getBoundingClientRect();
-            if ((rect.top >= 0) && (rect.bottom <= window.innerHeight)) {
-                document.getElementById('aboutSubtitle').removeAttribute('hidden');
+            var rect = document
+                .getElementById('aboutSubtitle')
+                .getBoundingClientRect();
+            if (rect.top >= 0 && rect.bottom <= window.innerHeight) {
+                document
+                    .getElementById('aboutSubtitle')
+                    .removeAttribute('hidden');
             }
-            rect = document.getElementById('aboutParagraph').getBoundingClientRect();
-            if ((rect.top >= 0) && (rect.bottom <= window.innerHeight)) {
-                document.getElementById('aboutParagraph').removeAttribute('hidden');
+            rect = document
+                .getElementById('aboutParagraph')
+                .getBoundingClientRect();
+            if (rect.top >= 0 && rect.bottom <= window.innerHeight) {
+                document
+                    .getElementById('aboutParagraph')
+                    .removeAttribute('hidden');
             }
         }
     },
