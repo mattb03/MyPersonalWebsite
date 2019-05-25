@@ -5,7 +5,11 @@
         </h3>
         <div class="columns" id="skillsColumns">
             <div class="column">
-                <div class="card animated bounceIn delay-2s" id="frontendCard" hidden>
+                <div
+                    class="card animated bounceIn delay-2s"
+                    id="frontendCard"
+                    hidden
+                >
                     <div class="card-content">
                         <div class="content">
                             <h3 class="subtitle is-3">Frontend</h3>
@@ -26,7 +30,11 @@
                 </div>
             </div>
             <div class="column">
-                <div class="card animated bounceIn delay-3s" id="backendCard" hidden>
+                <div
+                    class="card animated bounceIn delay-3s"
+                    id="backendCard"
+                    hidden
+                >
                     <div class="card-content">
                         <div class="content">
                             <h3 class="subtitle is-3">Backend</h3>
@@ -54,10 +62,16 @@ export default {
     methods: {
         handleScroll: function() {
             //var rect = document.getElementById('frontendCard').getBoundingClientRect();
-            var rect = document.getElementById('skillsColumns').getBoundingClientRect();
-            if ((rect.top >= 0) && (rect.bottom <= window.innerHeight)) {
-                document.getElementById('frontendCard').removeAttribute('hidden');
-                document.getElementById('backendCard').removeAttribute('hidden');
+            var rect = document
+                .getElementById('skillsColumns')
+                .getBoundingClientRect();
+            if (rect.top >= 0 && rect.bottom <= window.innerHeight) {
+                document
+                    .getElementById('frontendCard')
+                    .removeAttribute('hidden');
+                document
+                    .getElementById('backendCard')
+                    .removeAttribute('hidden');
             }
         }
     },

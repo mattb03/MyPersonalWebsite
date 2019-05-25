@@ -12,8 +12,7 @@
                 </div>
             </div>
             <div class="timeline-item is-info" id="timelineItem2">
-                <div class="timeline-marker is-info">
-                </div>
+                <div class="timeline-marker is-info"></div>
                 <div class="timeline-content">
                     <p class="heading">
                         June 2017
@@ -32,7 +31,10 @@
                 <div class="timeline-marker is-primary"></div>
                 <div class="timeline-content">
                     <p class="heading">December 2017</p>
-                    <p>Graduated from UTSA with a Bachelor of Science, Computer Science, Cum Laude</p>
+                    <p>
+                        Graduated from UTSA with a Bachelor of Science, Computer
+                        Science, Cum Laude
+                    </p>
                 </div>
             </div>
             <div class="timeline-item is-info" id="timelineItem5">
@@ -54,27 +56,40 @@
 </template>
 
 <script>
-
 export default {
     name: 'Timeline',
     methods: {
         handleScroll: function() {
-            var rect = document.getElementById('timelineItem2').getBoundingClientRect();
-            if ((rect.top >= 0) && (rect.bottom <= window.innerHeight)) {
-                document.getElementById('timelineItem1').classList.add('animated', 'bounceIn');
-                document.getElementById('timelineItem2').classList.add('animated', 'bounceIn', 'delay-1s');
-                document.getElementById('timelineItem3').classList.add('animated', 'bounceIn', 'delay-2s');
-                document.getElementById('timelineItem4').classList.add('animated', 'bounceIn', 'delay-3s');
-                document.getElementById('timelineItem5').classList.add('animated', 'bounceIn', 'delay-4s');
-                document.getElementById('timelineItem6').classList.add('animated', 'bounceIn', 'delay-5s');
-                document.getElementById('timelineSection').style.visibility = 'visible';
+            var rect = document
+                .getElementById('timelineItem2')
+                .getBoundingClientRect();
+            if (rect.top >= 0 && rect.bottom <= window.innerHeight) {
+                document
+                    .getElementById('timelineItem1')
+                    .classList.add('animated', 'bounceIn');
+                document
+                    .getElementById('timelineItem2')
+                    .classList.add('animated', 'bounceIn', 'delay-1s');
+                document
+                    .getElementById('timelineItem3')
+                    .classList.add('animated', 'bounceIn', 'delay-2s');
+                document
+                    .getElementById('timelineItem4')
+                    .classList.add('animated', 'bounceIn', 'delay-3s');
+                document
+                    .getElementById('timelineItem5')
+                    .classList.add('animated', 'bounceIn', 'delay-4s');
+                document
+                    .getElementById('timelineItem6')
+                    .classList.add('animated', 'bounceIn', 'delay-5s');
+                document.getElementById('timelineSection').style.visibility =
+                    'visible';
             }
         }
     },
     mounted() {
         document.addEventListener('scroll', this.handleScroll);
         document.getElementById('timelineSection').style.visibility = 'hidden';
-
     }
 };
 </script>
