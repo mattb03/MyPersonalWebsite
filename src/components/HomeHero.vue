@@ -60,7 +60,7 @@ export default {
 }
 .hero {
     height: 100vh;
-    background: url('../assets/mountaincropped.jpeg');
+    background: url('../assets/mountain.jpeg');
     background-size: cover;
     /*
     width: 100%;
@@ -68,7 +68,7 @@ export default {
     max-height: 100%;
     */
 }
-@media screen and (min-width: 320px) and (orientation:portrait) {
+@media screen and (max-width: 900px) and (orientation:portrait) {
     .hero {
         height: 100vh;
         background: url('../assets/mountaincropped.jpeg');
@@ -78,7 +78,7 @@ export default {
         margin-top: 130%;
     }
 }
-@media screen and (min-width: 320px) and (orientation:landscape) {
+@media screen and (max-width: 700px) and (orientation:landscape) {
     .hero {
         height: 100vh;
         background: url('../assets/mountain.jpeg');
