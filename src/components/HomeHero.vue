@@ -38,7 +38,6 @@ export default {
 };
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 /*
   image1: rtCujH697DU
@@ -62,11 +61,6 @@ export default {
     height: 100vh;
     background: url('../assets/mountain.jpeg');
     background-size: cover;
-    /*
-    width: 100%;
-    height: 100%;
-    max-height: 100%;
-    */
 }
 @media screen and (max-width: 900px) and (orientation:portrait) {
     .hero {
@@ -88,14 +82,4 @@ export default {
         margin-top: 25%;
     }
 }
-/**
-  .hero {
-    height: 100vh;
-    background: url('http://source.unsplash.com/0BhSKStVtdM') no-repeat;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    border: 10px red dashed;
-  }
-  */
 </style>

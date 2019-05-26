@@ -61,7 +61,6 @@ export default {
     name: 'Skills',
     methods: {
         handleScroll: function() {
-            //var rect = document.getElementById('frontendCard').getBoundingClientRect();
             var rect = document
                 .getElementById('skillsColumns')
                 .getBoundingClientRect();
