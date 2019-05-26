@@ -7,9 +7,9 @@
             <h2 class="subtitle animated fadeIn delay-2s" id="introSubtitle">
                 I'm a software engineer.
             </h2>
-            <a href="#AboutSection" class="animated fadeInUp delay-3s">
+            <a href="#AboutSection">
                 <span class="icon">
-                    <i class="fas fa-angle-down" id="arrowIcon"></i>
+                    <i class="fas fa-angle-down animated fadeInUp delay-3s" id="arrowIcon"></i>
                 </span>
             </a>
         </div>
