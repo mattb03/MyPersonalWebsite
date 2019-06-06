@@ -32,13 +32,52 @@ export default {
         handleResize: function() {
             var viewportWidth = window.innerWidth || document.documentElement.clientWidth;
             var viewportHeight = window.innerHeight;
+
+            if (viewportWidth < 450 && viewportHeight < 850) {
+                document.getElementById('arrowIcon').classList.remove('icon-landscape-small');
+
+                // mobile portrait
+                document.getElementById('helloTitle').classList.add('is-3');
+                document.getElementById('introSubtitle').classList.add('is-4');
+                document.getElementById('arrowIcon').classList.add('fa-2x');
+                document.getElementById('arrowIcon').classList.add('icon-default');
+            } else if (viewportWidth < 850 && viewportHeight < 450) {
+                document.getElementById('arrowIcon').classList.remove('icon-default');
+
+                // mobile landscape
+                document.getElementById('helloTitle').classList.add('is-3');
+                document.getElementById('introSubtitle').classList.add('is-4');
+                document.getElementById('arrowIcon').classList.add('fa-2x');
+                document.getElementById('arrowIcon').classList.add('icon-landscape-small');
+            } else if (viewportWidth < 900 && viewportHeight > 1000) {
+                document.getElementById('arrowIcon').classList.remove('icon-landscape-small');
+
+                // tablet portrait
+                document.getElementById('helloTitle').classList.add('is-1');
+                document.getElementById('introSubtitle').classList.add('is-2');
+                document.getElementById('arrowIcon').classList.add('fa-4x');
+                document.getElementById('arrowIcon').classList.add('icon-default');
+            } else if (viewportWidth > 1000 && viewportHeight < 900) {
+                document.getElementById('arrowIcon').classList.remove('icon-default');
+
+                // tablet landscape
+                document.getElementById('helloTitle').classList.add('is-1');
+                document.getElementById('introSubtitle').classList.add('is-2');
+                document.getElementById('arrowIcon').classList.add('fa-4x');
+                document.getElementById('arrowIcon').classList.add('icon-landscape-small');
+            } else {
+                // desktop
+                document.getElementById('helloTitle').classList.add('is-1');
+                document.getElementById('introSubtitle').classList.add('is-2');
+                document.getElementById('arrowIcon').classList.add('fa-4x');
+                document.getElementById('arrowIcon').classList.add('icon-default');
+            }
         },
 
     },
     mounted() {
         var viewportWidth = window.innerWidth || document.documentElement.clientWidth;
         var viewportHeight = window.innerHeight;
-        var orientation = screen.msOrientation || screen.mozOrientation || (screen.orientation || {}).type;
 
         document.getElementById('sectionHero').classList.add('hero-large');
         if (viewportWidth < 450 && viewportHeight < 850) {
