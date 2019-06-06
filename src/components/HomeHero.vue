@@ -33,9 +33,11 @@ export default {
             var viewportWidth = window.innerWidth || document.documentElement.clientWidth;
             if (viewportWidth > 900) {
                 // desktop
+                this.resizeDesktop();
             } else {
                 if (viewportWidth > 700) {
                     // ipad/tablet portrait
+                    this.resizeTablet();
                 } else {
                     // mobile 
                     this.resizeMobile();
@@ -44,7 +46,6 @@ export default {
         },
         resizeMobile: function() {
                 var viewportWidth = window.innerWidth || document.documentElement.clientWidth;
-                var orientation = screen.msOrientation || screen.mozOrientation || (screen.orientation || {}).type;
                 document.getElementById('helloTitle').classList.remove('is-1');
                 document.getElementById('introSubtitle').classList.remove('is-2');
                 document.getElementById('arrowIcon').classList.remove('fa-4x');
@@ -70,15 +71,39 @@ export default {
                 }
         },
         resizeTablet: function() {
+                document.getElementById('helloTitle').classList.remove('is-3');
+                document.getElementById('introSubtitle').classList.remove('is-4');
+                document.getElementById('arrowIcon').classList.remove('fa-2x');
 
+
+                document.getElementById('helloTitle').classList.add('is-1');
+                document.getElementById('introSubtitle').classList.add('is-2');
+                document.getElementById('arrowIcon').classList.add('fa-4x');
+
+                document.getElementById('arrowIcon').classList.remove('icon-portrait-small');
+                document.getElementById('arrowIcon').classList.remove('icon-landscape-small');
+                document.getElementById('arrowIcon').classList.add('icon-default');
+                document.getElementById('sectionHero').classList.remove('hero-large');
+                document.getElementById('sectionHero').classList.remove('hero-small'); // remove potential extra hero-small
+                document.getElementById('sectionHero').classList.add('hero-small');
         },
         resizeDesktop: function() {
+                document.getElementById('helloTitle').classList.remove('is-3');
+                document.getElementById('introSubtitle').classList.remove('is-4');
+                document.getElementById('arrowIcon').classList.remove('fa-2x');
+                document.getElementById('arrowIcon').classList.remove('icon-portrait-small');
+                document.getElementById('arrowIcon').classList.remove('icon-landscape-small');
+                document.getElementById('sectionHero').classList.remove('hero-small');
 
+                document.getElementById('helloTitle').classList.add('is-1');
+                document.getElementById('introSubtitle').classList.add('is-2');
+                document.getElementById('arrowIcon').classList.add('fa-4x');
+                document.getElementById('arrowIcon').classList.add('icon-default');
+                document.getElementById('sectionHero').classList.add('hero-large');
         }
     },
     mounted() {
         var viewportWidth = window.innerWidth || document.documentElement.clientWidth;
-        var orientation = screen.msOrientation || screen.mozOrientation || (screen.orientation || {}).type;
         if (viewportWidth > 900) {
             document.getElementById('helloTitle').classList.add('is-1');
             document.getElementById('introSubtitle').classList.add('is-2');
