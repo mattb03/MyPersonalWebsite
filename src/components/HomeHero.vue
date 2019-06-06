@@ -7,7 +7,7 @@
             <h2 class="subtitle animated fadeIn delay-2s" id="introSubtitle">
                 I'm a software engineer.
             </h2>
-            <a href="#AboutSection" id="arrowHref"> <!-- TODO: give this <a> an id, use it for margin-top instead of <i> element -->
+            <a href="#AboutSection"> <!-- TODO: give this <a> an id, use it for margin-top instead of <i> element -->
                 <span class="icon" id="arrowIcon">
                     <i class="fas fa-angle-down animated fadeInUp delay-3s"></i>
                 </span>
@@ -38,11 +38,7 @@ export default {
     mounted() {
         var viewportWidth = window.innerWidth || document.documentElement.clientWidth;
         document.getElementById('sectionHero').classList.add('hero-large');
-        if (orientation === 'landscape-primary' || orientation === 'landscape-secondary') {
-            document.getElementById('arrowIcon').classList.add('icon-landscape-small');
-        } else {
-            document.getElementById('arrowIcon').classList.add('icon-default');
-        }
+
         if (viewportWidth > 700) {
             document.getElementById('helloTitle').classList.add('is-1');
             document.getElementById('introSubtitle').classList.add('is-2');
@@ -52,9 +48,13 @@ export default {
             document.getElementById('introSubtitle').classList.add('is-4');
             document.getElementById('arrowIcon').classList.add('fa-2x');
         } 
-    
+        if (orientation === 'landscape-primary' || orientation === 'landscape-secondary') {
+            document.getElementById('arrowIcon').classList.add('icon-landscape-small');
+        } else {
+            document.getElementById('arrowIcon').classList.add('icon-default');
+        }
         
-        //window.addEventListener('resize', this.handleResize);
+        window.addEventListener('resize', this.handleResize);
     }
 };
 </script>
@@ -65,7 +65,9 @@ export default {
   image2: ddLiNMqWAOM
   image3: KidY3t8O4PE
 */
-
+a {
+    color: darkgrey;
+}
 .container {
     margin: 15% 30% 30% 30%;
     flex-direction: column;
@@ -75,7 +77,6 @@ export default {
     color: darkgrey;
 }
 .icon-default {
-    color: darkgrey;
     margin-top: 50%;
 }
 .hero-large {
@@ -91,7 +92,6 @@ export default {
 }
 
 .icon-landscape-small {
-    color: darkgrey;
     margin-top: 25%;
 }
 </style>
