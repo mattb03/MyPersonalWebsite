@@ -35,7 +35,7 @@ export default {
                 // desktop
                 this.resizeDesktop();
             } else {
-                if (viewportWidth > 700) {
+                if (viewportWidth > 700 && viewportWidth < 800) {
                     // ipad/tablet portrait
                     this.resizeTablet();
                 } else {
@@ -112,7 +112,7 @@ export default {
             document.getElementById('sectionHero').classList.add('hero-large');
         } else {
             // small screen
-            if (viewportWidth > 700) {
+            if (viewportWidth > 700 && viewportWidth < 800) {
                 // ipad/tablet portrait
                 document.getElementById('helloTitle').classList.add('is-1');
                 document.getElementById('introSubtitle').classList.add('is-2');
