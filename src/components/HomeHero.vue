@@ -32,119 +32,29 @@ export default {
         handleResize: function() {
             var viewportWidth = window.innerWidth || document.documentElement.clientWidth;
             var viewportHeight = window.innerHeight;
-            if (viewportWidth > 900) {
-                // desktop
-                this.resizeDesktop();
-            } else {
-                if (viewportWidth > 700 && viewportWidth < 800 && 
-                    viewportHeight > 500) {
-                    // ipad/tablet portrait
-                    this.resizeTablet();
-                } else {
-                    // mobile 
-                    this.resizeMobile();
-                }
-            }
         },
-        resizeMobile: function() {
-                var viewportWidth = window.innerWidth || document.documentElement.clientWidth;
-                document.getElementById('helloTitle').classList.remove('is-1');
-                document.getElementById('introSubtitle').classList.remove('is-2');
-                document.getElementById('arrowIcon').classList.remove('fa-4x');
 
-
-                document.getElementById('helloTitle').classList.add('is-3');
-                document.getElementById('introSubtitle').classList.add('is-4');
-                document.getElementById('arrowIcon').classList.add('fa-2x');
-                if (viewportWidth < 450) {
-                    document.getElementById('arrowIcon').classList.remove('icon-landscape-small');
-                    document.getElementById('arrowIcon').classList.add('icon-portrait-small');
-
-                    document.getElementById('sectionHero').classList.remove('hero-large');
-                    document.getElementById('sectionHero').classList.add('hero-small');
-                } else {
-                    document.getElementById('arrowIcon').classList.remove('icon-portrait-small');
-                    document.getElementById('arrowIcon').classList.add('icon-landscape-small');
-
-                    document.getElementById('sectionHero').classList.remove('hero-small');
-                    document.getElementById('sectionHero').classList.add('hero-large');
-                    
-                }
-        },
-        resizeTablet: function() {
-                document.getElementById('helloTitle').classList.remove('is-3');
-                document.getElementById('introSubtitle').classList.remove('is-4');
-                document.getElementById('arrowIcon').classList.remove('fa-2x');
-
-
-                document.getElementById('helloTitle').classList.add('is-1');
-                document.getElementById('introSubtitle').classList.add('is-2');
-                document.getElementById('arrowIcon').classList.add('fa-4x');
-
-                document.getElementById('arrowIcon').classList.remove('icon-portrait-small');
-                document.getElementById('arrowIcon').classList.remove('icon-landscape-small');
-                document.getElementById('arrowIcon').classList.add('icon-default');
-                document.getElementById('sectionHero').classList.remove('hero-large');
-                document.getElementById('sectionHero').classList.remove('hero-small'); // remove potential extra hero-small
-                document.getElementById('sectionHero').classList.add('hero-small');
-        },
-        resizeDesktop: function() {
-                document.getElementById('helloTitle').classList.remove('is-3');
-                document.getElementById('introSubtitle').classList.remove('is-4');
-                document.getElementById('arrowIcon').classList.remove('fa-2x');
-                document.getElementById('arrowIcon').classList.remove('icon-portrait-small');
-                document.getElementById('arrowIcon').classList.remove('icon-landscape-small');
-                document.getElementById('sectionHero').classList.remove('hero-small');
-
-                document.getElementById('helloTitle').classList.add('is-1');
-                document.getElementById('introSubtitle').classList.add('is-2');
-                document.getElementById('arrowIcon').classList.add('fa-4x');
-                document.getElementById('arrowIcon').classList.add('icon-default');
-                document.getElementById('sectionHero').classList.add('hero-large');
-        }
     },
     mounted() {
         var viewportWidth = window.innerWidth || document.documentElement.clientWidth;
-        var viewportHeight = window.innerHeight;
-        if (viewportWidth > 900) {
+        document.getElementById('sectionHero').classList.add('hero-large');
+        if (orientation === 'landscape-primary' || orientation === 'landscape-secondary') {
+            document.getElementById('arrowIcon').classList.add('icon-landscape-small');
+        } else {
+            document.getElementById('arrowIcon').classList.add('icon-default');
+        }
+        if (viewportWidth > 700) {
             document.getElementById('helloTitle').classList.add('is-1');
             document.getElementById('introSubtitle').classList.add('is-2');
             document.getElementById('arrowIcon').classList.add('fa-4x');
-            document.getElementById('arrowIcon').classList.add('icon-default');
-            document.getElementById('sectionHero').classList.add('hero-large');
         } else {
-            // small screen
-            if (viewportWidth > 700 && viewportWidth < 800) {
-                if (viewportHeight > 500) {
-                // ipad/tablet portrait
-                document.getElementById('helloTitle').classList.add('is-1');
-                document.getElementById('introSubtitle').classList.add('is-2');
-                document.getElementById('arrowIcon').classList.add('fa-4x');
-                document.getElementById('arrowIcon').classList.add('icon-default');
-                document.getElementById('sectionHero').classList.add('hero-small');
-                } else {
-                    document.getElementById('helloTitle').classList.add('is-3');
-                    document.getElementById('introSubtitle').classList.add('is-4');
-                    document.getElementById('arrowIcon').classList.add('fa-2x');
-                    document.getElementById('arrowIcon').classList.add('icon-landscape-small');
-                    document.getElementById('sectionHero').classList.add('hero-large');
-                }
-            } else {
-                // mobile potrait/landscape
-                document.getElementById('helloTitle').classList.add('is-3');
-                document.getElementById('introSubtitle').classList.add('is-4');
-                document.getElementById('arrowIcon').classList.add('fa-2x');
-
-                if (viewportWidth < 450) {
-                    document.getElementById('arrowIcon').classList.add('icon-portrait-small');
-                    document.getElementById('sectionHero').classList.add('hero-small');
-                } else {
-                    document.getElementById('arrowIcon').classList.add('icon-landscape-small');
-                    document.getElementById('sectionHero').classList.add('hero-large');
-                }            
-            }
-        }
-        window.addEventListener('resize', this.handleResize);
+            document.getElementById('helloTitle').classList.add('is-3');
+            document.getElementById('introSubtitle').classList.add('is-4');
+            document.getElementById('arrowIcon').classList.add('fa-2x');
+        } 
+    
+        
+        //window.addEventListener('resize', this.handleResize);
     }
 };
 </script>
@@ -172,16 +82,14 @@ export default {
     height: 100vh;
     background: url('../assets/mountain.jpeg');
     background-size: cover;
+    background-position: center;
 }
 .hero-small {
     height: 100vh;
     background: url('../assets/mountaincropped.jpeg');
     background-size: cover;
 }
-.icon-portrait-small {
-    color: darkgrey;
-    margin-top: 130%;
-}
+
 .icon-landscape-small {
     color: darkgrey;
     margin-top: 25%;
