@@ -37,23 +37,41 @@ export default {
     },
     mounted() {
         var viewportWidth = window.innerWidth || document.documentElement.clientWidth;
-        document.getElementById('sectionHero').classList.add('hero-large');
+        var viewportHeight = window.innerHeight;
+        var orientation = screen.msOrientation || screen.mozOrientation || (screen.orientation || {}).type;
 
-        if (viewportWidth > 700) {
-            document.getElementById('helloTitle').classList.add('is-1');
-            document.getElementById('introSubtitle').classList.add('is-2');
-            document.getElementById('arrowIcon').classList.add('fa-4x');
-        } else {
+        document.getElementById('sectionHero').classList.add('hero-large');
+        if (viewportWidth < 450 && viewportHeight < 850) {
+            // mobile portrait
             document.getElementById('helloTitle').classList.add('is-3');
             document.getElementById('introSubtitle').classList.add('is-4');
             document.getElementById('arrowIcon').classList.add('fa-2x');
-        } 
-        if (orientation === 'landscape-primary' || orientation === 'landscape-secondary') {
+            document.getElementById('arrowIcon').classList.add('icon-default');
+        } else if (viewportWidth < 850 && viewportHeight < 450) {
+            // mobile landscape
+            document.getElementById('helloTitle').classList.add('is-3');
+            document.getElementById('introSubtitle').classList.add('is-4');
+            document.getElementById('arrowIcon').classList.add('fa-2x');
+            document.getElementById('arrowIcon').classList.add('icon-landscape-small');
+        } else if (viewportWidth < 900 && viewportHeight > 1000) {
+            // tablet portrait
+            document.getElementById('helloTitle').classList.add('is-1');
+            document.getElementById('introSubtitle').classList.add('is-2');
+            document.getElementById('arrowIcon').classList.add('fa-4x');
+            document.getElementById('arrowIcon').classList.add('icon-default');
+        } else if (viewportWidth > 1000 && viewportHeight < 900) {
+            // tablet landscape
+            document.getElementById('helloTitle').classList.add('is-1');
+            document.getElementById('introSubtitle').classList.add('is-2');
+            document.getElementById('arrowIcon').classList.add('fa-4x');
             document.getElementById('arrowIcon').classList.add('icon-landscape-small');
         } else {
+            // desktop
+            document.getElementById('helloTitle').classList.add('is-1');
+            document.getElementById('introSubtitle').classList.add('is-2');
+            document.getElementById('arrowIcon').classList.add('fa-4x');
             document.getElementById('arrowIcon').classList.add('icon-default');
         }
-        
         window.addEventListener('resize', this.handleResize);
     }
 };
@@ -69,7 +87,7 @@ a {
     color: darkgrey;
 }
 .container {
-    margin: 15% 30% 30% 30%;
+    margin: 5% 30% 30% 30%;
     flex-direction: column;
 }
 .title,
@@ -77,7 +95,7 @@ a {
     color: darkgrey;
 }
 .icon-default {
-    margin-top: 50%;
+    margin-top: 110%;
 }
 .hero-large {
     height: 100vh;
@@ -92,6 +110,7 @@ a {
 }
 
 .icon-landscape-small {
-    margin-top: 25%;
+    margin-top: 45%;
 }
+
 </style>
