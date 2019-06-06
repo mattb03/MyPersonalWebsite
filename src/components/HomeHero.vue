@@ -31,11 +31,13 @@ export default {
     methods: {
         handleResize: function() {
             var viewportWidth = window.innerWidth || document.documentElement.clientWidth;
+            var viewportHeight = window.innerHeight;
             if (viewportWidth > 900) {
                 // desktop
                 this.resizeDesktop();
             } else {
-                if (viewportWidth > 700 && viewportWidth < 800) {
+                if (viewportWidth > 700 && viewportWidth < 800 && 
+                    viewportHeight > 500) {
                     // ipad/tablet portrait
                     this.resizeTablet();
                 } else {
@@ -54,7 +56,6 @@ export default {
                 document.getElementById('helloTitle').classList.add('is-3');
                 document.getElementById('introSubtitle').classList.add('is-4');
                 document.getElementById('arrowIcon').classList.add('fa-2x');
-
                 if (viewportWidth < 450) {
                     document.getElementById('arrowIcon').classList.remove('icon-landscape-small');
                     document.getElementById('arrowIcon').classList.add('icon-portrait-small');
@@ -104,6 +105,7 @@ export default {
     },
     mounted() {
         var viewportWidth = window.innerWidth || document.documentElement.clientWidth;
+        var viewportHeight = window.innerHeight;
         if (viewportWidth > 900) {
             document.getElementById('helloTitle').classList.add('is-1');
             document.getElementById('introSubtitle').classList.add('is-2');
@@ -113,12 +115,20 @@ export default {
         } else {
             // small screen
             if (viewportWidth > 700 && viewportWidth < 800) {
+                if (viewportHeight > 500) {
                 // ipad/tablet portrait
                 document.getElementById('helloTitle').classList.add('is-1');
                 document.getElementById('introSubtitle').classList.add('is-2');
                 document.getElementById('arrowIcon').classList.add('fa-4x');
                 document.getElementById('arrowIcon').classList.add('icon-default');
                 document.getElementById('sectionHero').classList.add('hero-small');
+                } else {
+                    document.getElementById('helloTitle').classList.add('is-3');
+                    document.getElementById('introSubtitle').classList.add('is-4');
+                    document.getElementById('arrowIcon').classList.add('fa-2x');
+                    document.getElementById('arrowIcon').classList.add('icon-landscape-small');
+                    document.getElementById('sectionHero').classList.add('hero-large');
+                }
             } else {
                 // mobile potrait/landscape
                 document.getElementById('helloTitle').classList.add('is-3');
