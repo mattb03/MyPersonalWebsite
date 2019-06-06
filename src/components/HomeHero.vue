@@ -55,7 +55,7 @@ export default {
                 document.getElementById('introSubtitle').classList.add('is-4');
                 document.getElementById('arrowIcon').classList.add('fa-2x');
 
-                if (viewportWidth < 400) {
+                if (viewportWidth < 450) {
                     document.getElementById('arrowIcon').classList.remove('icon-landscape-small');
                     document.getElementById('arrowIcon').classList.add('icon-portrait-small');
 
@@ -125,7 +125,7 @@ export default {
                 document.getElementById('introSubtitle').classList.add('is-4');
                 document.getElementById('arrowIcon').classList.add('fa-2x');
 
-                if (viewportWidth < 400) {
+                if (viewportWidth < 450) {
                     document.getElementById('arrowIcon').classList.add('icon-portrait-small');
                     document.getElementById('sectionHero').classList.add('hero-small');
                 } else {
