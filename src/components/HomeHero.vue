@@ -1,5 +1,5 @@
 <template>
-    <section class="hero">
+    <section class="hero" id="sectionHero">
         <div class="container">
             <h1 class="title animated fadeInDown delay-1s" id="helloTitle">
                 Hello there, I'm Matt!
@@ -7,9 +7,9 @@
             <h2 class="subtitle animated fadeIn delay-2s" id="introSubtitle">
                 I'm a software engineer.
             </h2>
-            <a href="#AboutSection">
-                <span class="icon">
-                    <i class="fas fa-angle-down animated fadeInUp delay-3s" id="arrowIcon"></i>
+            <a href="#AboutSection"> <!-- TODO: give this <a> an id, use it for margin-top instead of <i> element -->
+                <span class="icon" id="arrowIcon">
+                    <i class="fas fa-angle-down animated fadeInUp delay-3s"></i>
                 </span>
             </a>
         </div>
@@ -22,18 +22,96 @@
 
 export default {
     name: 'HomeHero',
+    data: function() {
+        return {
+            viewportWidth: window.innerWidth || document.documentElement.clientWidth,
+            orientation: screen.msOrientation || screen.mozOrientation || (screen.orientation || {}).type
+        }
+    },
+    methods: {
+        handleResize: function() {
+            var viewportWidth = window.innerWidth || document.documentElement.clientWidth;
+            var viewportHeight = window.innerHeight;
+
+            if (viewportWidth < 450 && viewportHeight < 850) {
+                document.getElementById('arrowIcon').classList.remove('icon-landscape-small');
+
+                // mobile portrait
+                document.getElementById('helloTitle').classList.add('is-3');
+                document.getElementById('introSubtitle').classList.add('is-4');
+                document.getElementById('arrowIcon').classList.add('fa-2x');
+                document.getElementById('arrowIcon').classList.add('icon-default');
+            } else if (viewportWidth < 850 && viewportHeight < 450) {
+                document.getElementById('arrowIcon').classList.remove('icon-default');
+
+                // mobile landscape
+                document.getElementById('helloTitle').classList.add('is-3');
+                document.getElementById('introSubtitle').classList.add('is-4');
+                document.getElementById('arrowIcon').classList.add('fa-2x');
+                document.getElementById('arrowIcon').classList.add('icon-landscape-small');
+            } else if (viewportWidth < 900 && viewportHeight > 1000) {
+                document.getElementById('arrowIcon').classList.remove('icon-landscape-small');
+
+                // tablet portrait
+                document.getElementById('helloTitle').classList.add('is-1');
+                document.getElementById('introSubtitle').classList.add('is-2');
+                document.getElementById('arrowIcon').classList.add('fa-4x');
+                document.getElementById('arrowIcon').classList.add('icon-default');
+            } else if (viewportWidth > 1000 && viewportHeight < 900) {
+                document.getElementById('arrowIcon').classList.remove('icon-default');
+
+                // tablet landscape
+                document.getElementById('helloTitle').classList.add('is-1');
+                document.getElementById('introSubtitle').classList.add('is-2');
+                document.getElementById('arrowIcon').classList.add('fa-4x');
+                document.getElementById('arrowIcon').classList.add('icon-landscape-small');
+            } else {
+                // desktop
+                document.getElementById('helloTitle').classList.add('is-1');
+                document.getElementById('introSubtitle').classList.add('is-2');
+                document.getElementById('arrowIcon').classList.add('fa-4x');
+                document.getElementById('arrowIcon').classList.add('icon-default');
+            }
+        },
+
+    },
     mounted() {
         var viewportWidth = window.innerWidth || document.documentElement.clientWidth;
+        var viewportHeight = window.innerHeight;
 
-        if (viewportWidth > 640) {
-            document.getElementById('helloTitle').classList.add('is-1');
-            document.getElementById('introSubtitle').classList.add('is-2');
-            document.getElementById('arrowIcon').classList.add('fa-4x');
-        } else {
+        document.getElementById('sectionHero').classList.add('hero-large');
+        if (viewportWidth < 450 && viewportHeight < 850) {
+            // mobile portrait
             document.getElementById('helloTitle').classList.add('is-3');
             document.getElementById('introSubtitle').classList.add('is-4');
             document.getElementById('arrowIcon').classList.add('fa-2x');
+            document.getElementById('arrowIcon').classList.add('icon-default');
+        } else if (viewportWidth < 850 && viewportHeight < 450) {
+            // mobile landscape
+            document.getElementById('helloTitle').classList.add('is-3');
+            document.getElementById('introSubtitle').classList.add('is-4');
+            document.getElementById('arrowIcon').classList.add('fa-2x');
+            document.getElementById('arrowIcon').classList.add('icon-landscape-small');
+        } else if (viewportWidth < 900 && viewportHeight > 1000) {
+            // tablet portrait
+            document.getElementById('helloTitle').classList.add('is-1');
+            document.getElementById('introSubtitle').classList.add('is-2');
+            document.getElementById('arrowIcon').classList.add('fa-4x');
+            document.getElementById('arrowIcon').classList.add('icon-default');
+        } else if (viewportWidth > 1000 && viewportHeight < 900) {
+            // tablet landscape
+            document.getElementById('helloTitle').classList.add('is-1');
+            document.getElementById('introSubtitle').classList.add('is-2');
+            document.getElementById('arrowIcon').classList.add('fa-4x');
+            document.getElementById('arrowIcon').classList.add('icon-landscape-small');
+        } else {
+            // desktop
+            document.getElementById('helloTitle').classList.add('is-1');
+            document.getElementById('introSubtitle').classList.add('is-2');
+            document.getElementById('arrowIcon').classList.add('fa-4x');
+            document.getElementById('arrowIcon').classList.add('icon-default');
         }
+        window.addEventListener('resize', this.handleResize);
     }
 };
 </script>
@@ -44,42 +122,34 @@ export default {
   image2: ddLiNMqWAOM
   image3: KidY3t8O4PE
 */
-
+a {
+    color: darkgrey;
+}
 .container {
-    margin: 15% 30% 30% 30%;
+    margin: 5% 30% 30% 30%;
     flex-direction: column;
 }
 .title,
 .subtitle {
     color: darkgrey;
 }
-.icon {
-    color: darkgrey;
-    margin-top: 50%;
+.icon-default {
+    margin-top: 110%;
 }
-.hero {
+.hero-large {
     height: 100vh;
     background: url('../assets/mountain.jpeg');
     background-size: cover;
+    background-position: center;
 }
-@media screen and (max-width: 900px) and (orientation:portrait) {
-    .hero {
-        height: 100vh;
-        background: url('../assets/mountaincropped.jpeg');
-        background-size: cover;
-    }
-    .icon {
-        margin-top: 130%;
-    }
+.hero-small {
+    height: 100vh;
+    background: url('../assets/mountaincropped.jpeg');
+    background-size: cover;
 }
-@media screen and (max-width: 700px) and (orientation:landscape) {
-    .hero {
-        height: 100vh;
-        background: url('../assets/mountain.jpeg');
-        background-size: cover;
-    }
-    .icon {
-        margin-top: 25%;
-    }
+
+.icon-landscape-small {
+    margin-top: 45%;
 }
+
 </style>
