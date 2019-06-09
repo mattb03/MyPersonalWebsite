@@ -66,6 +66,9 @@ export default {
                 document.getElementById('arrowIcon').classList.add('fa-4x');
                 document.getElementById('arrowIcon').classList.add('icon-landscape-small');
             } else {
+                document.getElementById('helloTitle').classList.remove('is-3');
+                document.getElementById('introSubtitle').classList.remove('is-4');
+
                 // desktop
                 document.getElementById('helloTitle').classList.add('is-1');
                 document.getElementById('introSubtitle').classList.add('is-2');
