@@ -58,7 +58,12 @@ export default {
 <style scoped>
 @media only screen and (max-width: 769px) {
     button {
-        margin-left: 38%;
+        margin-left: 36%;
+    }
+}
+@media only screen and (min-width: 770px) {
+    button {
+        margin-left: 20%;
     }
 }
 </style>
