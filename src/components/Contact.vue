@@ -1,31 +1,43 @@
 <template>
-    <section class="section">
-        <div class="container" style="max-width: 50vw;">
+    <section class="section hero">
+        <div class="container">
             <h3 class="subtitle is-3">Contact Me</h3>
             <!-- TODO: figure out how to align the name and email boxes with the message box -->
-            <div class="columns">
-                <div class="field column">
-                    <label class="label">Name</label>
-                    <div class="control">
-                        <input type="text" class="input" placeholder="Enter name">
+            <div class="columns is-centered">
+                <div class="column">
+                    <div class="field">
+                        <label class="label">Name</label>
+                        <div class="control">
+                            <input type="text" class="input" placeholder="Enter name">
+                        </div>
                     </div>
                 </div>
-                <div class="field column">
-                    <label class="label">Email</label>
-                    <div class="control">
-                        <input type="text" class="input" placeholder="Enter email">
+                <div class="column">
+                    <div class="field">
+                        <label class="label">Email</label>
+                        <div class="control">
+                            <input type="text" class="input" placeholder="Enter email">
+                        </div>
                     </div>
                 </div>
             </div>
-            <div class="field column">
-                <label class="label">Message</label>
-                <div class="control">
-                    <textarea cols="30" rows="10" class="textarea">Enter a message</textarea>
+            <div class="columns is-centered">
+                <div class="column">
+                    <div class="field">
+                        <label class="label">Message</label>
+                        <div class="control">
+                            <textarea cols="30" rows="10" class="textarea">Enter a message</textarea>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <div class="field">
-                <div class="control">
-                    <button class="button is-link">Submit</button>
+            <div class="columns is-centered">
+                <div class="column is-one-third">
+                    <div class="field">
+                        <div class="control">
+                            <button class="button is-rounded" type="submit">Submit</button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -34,13 +46,22 @@
 
 <script>
 export default {
-    name: 'Contact'
+    name: 'Contact',
+    methods: {
+
+    },
+    mounted() {
+    }
 };
 </script>
 
 <style scoped>
-button {
+.container {
+    justify-content: center;
+}
+.button {
     /* TODO: figure out how to center the submit button */
+    
 }
 </style>
 
