@@ -56,12 +56,10 @@ export default {
 </script>
 
 <style scoped>
-.container {
-    justify-content: center;
-}
-.button {
-    /* TODO: figure out how to center the submit button */
-    
+@media only screen and (max-width: 769px) {
+    button {
+        margin-left: 38%;
+    }
 }
 </style>
 
