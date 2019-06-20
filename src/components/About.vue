@@ -9,9 +9,8 @@
             hidden
         >
             I'm currently a software engineer working at AT&T. I started my
-            career in January 2018 after graduating from college. I graduated
-            from the University of Texas at San Antonio with a Bachelor's of
-            Science Computer Science in December 2017. I have full stack
+            career in January 2018, after graduating from the University of Texas at San Antonio with a Bachelor's of
+            Science, Computer Science in December 2017. I have full stack
             development experience in several languages and frameworks. Check
             out the tech stacks I've used below.
         </p>
