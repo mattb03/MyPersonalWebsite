@@ -1,6 +1,7 @@
 <template>
     <section class="section hero">
         <div class="container" id="contactContainer">
+            <h4 class="subtitle is-4">Like what you see? Want your own website?</h4>
             <h3 class="subtitle is-3">Contact Me</h3>
             <form name="contact" method="post" data-netlify="true" data-netlify-honeypot="bot-field">
                   <input type="hidden" name="form-name" value="contact" />  
