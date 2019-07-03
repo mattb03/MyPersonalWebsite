@@ -2,33 +2,36 @@
     <section class="section hero">
         <div class="container" id="contactContainer">
             <h3 class="subtitle is-3">Contact Me</h3>
-            <form name="contact" netlify>
+            <form name="contact" data-netlify="true">
                   <input type="hidden" name="form-name" value="contact" />  
                 <div class="columns is-centered">
                     <div class="column">
                         <div class="field animated fadeInUp delay-1s" id="nameField" hidden>
-                            <label class="label">Name</label>
+                            <label class="label">Name
                             <div class="control">
                                 <input type="text" name="nameInput" class="input" placeholder="Enter name" id="nameInput">
                             </div>
+                            </label>
                         </div>
                     </div>
                     <div class="column">
                         <div class="field animated fadeInUp delay-1s" id="emailField" hidden>
-                            <label class="label">Email</label>
+                            <label class="label">Email
                             <div class="control">
                                 <input type="text" name="emailInput" class="input" placeholder="Enter email" id="emailInput">
                             </div>
+                            </label>
                         </div>
                     </div>
                 </div>
                 <div class="columns is-centered">
                     <div class="column">
                         <div class="field animated fadeInUp delay-1s" id="messageField" hidden>
-                            <label class="label">Message</label>
+                            <label class="label">Message
                             <div class="control">
                                 <textarea cols="30" rows="10" name="messageTextarea" class="textarea" id="messageTextarea">Enter a message</textarea>
                             </div>
+                            </label>
                         </div>
                     </div>
                 </div>
