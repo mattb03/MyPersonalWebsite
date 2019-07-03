@@ -2,7 +2,7 @@
     <section class="section hero">
         <div class="container" id="contactContainer">
             <h3 class="subtitle is-3">Contact Me</h3>
-            <form method="POST" data-netlify="true" netlify="true" netlify>
+            <form method="POST" data-netlify="true" netlify="true">
                 <div class="columns is-centered">
                     <div class="column">
                         <div class="field animated fadeInUp delay-1s" id="nameField" hidden>
