@@ -30,7 +30,7 @@
                         <div class="field animated fadeInUp delay-1s" id="messageField" hidden>
                             <label class="label">Message
                             <div class="control">
-                                <textarea cols="30" rows="10" name="messageTextarea" class="textarea" id="messageTextarea">Enter a message</textarea>
+                                <textarea cols="30" rows="10" name="messageTextarea" class="textarea" id="messageTextarea" placeholder="Enter a message"></textarea>
                             </div>
                             </label>
                         </div>
