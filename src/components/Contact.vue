@@ -35,7 +35,7 @@
                     <div class="column is-one-third">
                         <div class="field animated fadeInUp delay-2s" id="submitButtonField" hidden>
                             <div class="control">
-                                <button class="button is-rounded" id="submitButton" type="submit">Submit</button>
+  <input type="submit" value="Submit">
                             </div>
                         </div>
                     </div>
