@@ -2,7 +2,7 @@
     <section class="section hero">
         <div class="container" id="contactContainer">
             <h3 class="subtitle is-3">Contact Me</h3>
-            <form action="POST" data-netlify="true">
+            <form method="POST" data-netlify="true">
                 <div class="columns is-centered">
                     <div class="column">
                         <div class="field animated fadeInUp delay-1s" id="nameField" hidden>
@@ -35,7 +35,7 @@
                     <div class="column is-one-third">
                         <div class="field animated fadeInUp delay-2s" id="submitButtonField" hidden>
                             <div class="control">
-                                <button class="button is-rounded" id="submitButton">Submit</button>
+                                <button class="button is-rounded" id="submitButton" type="submit">Submit</button>
                             </div>
                         </div>
                     </div>
