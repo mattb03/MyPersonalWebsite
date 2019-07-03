@@ -1,9 +1,12 @@
 from flask import Flask, request, flash, redirect
+from flask_cors import CORS
 from wtforms import Form, StringField, validators
 from database import db_session, init_db
 from models import Message
+import json
 
 app = Flask(__name__)
+CORS(app)
 
 app.secret_key = 'very-secret-key'
 
@@ -14,15 +17,12 @@ class ContactForm(Form):
 
 @app.route('/sendMessage', methods=['POST'])
 def send_message():
-    form = ContactForm(request.form)
-    if form.validate():
-        message = Message(form.name.data, form.email.data, form.message.data)
-        db_session.add(message)
-        flash('Thanks for your message!')
-    else:
-        flash('There was an error sending me your message')
-
-    return redirect('http://localhost:8080/#ContactSection')
+    print (request.get_json())
+    res = {
+        'status_code': 200,
+        'message': 'Success'
+    }
+    return json.dumps(res)
     
 @app.teardown_appcontext
 def shutdown_session(exception=None):

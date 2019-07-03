@@ -12,6 +12,7 @@
     "bulma": "^0.7.5",
     "bulma-timeline": "^3.0.4",
     "core-js": "^2.6.5",
+    "prerender-spa-plugin": "^3.4.0",
     "vue": "^2.6.10",
     "vue-check-view": "^0.3.0",
     "vue-observe-visibility": "^0.4.4",

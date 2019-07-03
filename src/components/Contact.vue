@@ -2,33 +2,36 @@
     <section class="section hero">
         <div class="container" id="contactContainer">
             <h3 class="subtitle is-3">Contact Me</h3>
-            <!-- TODO: figure out how to align the name and email boxes with the message box -->
-            <form action="http://localhost:5000/sendMessage" method="POST">
+            <form name="contact" method="post" data-netlify="true" data-netlify-honeypot="bot-field">
+                  <input type="hidden" name="form-name" value="contact" />  
                 <div class="columns is-centered">
                     <div class="column">
                         <div class="field animated fadeInUp delay-1s" id="nameField" hidden>
-                            <label class="label">Name</label>
+                            <label class="label">Name
                             <div class="control">
-                                <input type="text" class="input" placeholder="Enter name">
+                                <input type="text" name="nameInput" class="input" placeholder="Enter name" id="nameInput">
                             </div>
+                            </label>
                         </div>
                     </div>
                     <div class="column">
                         <div class="field animated fadeInUp delay-1s" id="emailField" hidden>
-                            <label class="label">Email</label>
+                            <label class="label">Email
                             <div class="control">
-                                <input type="text" class="input" placeholder="Enter email">
+                                <input type="text" name="emailInput" class="input" placeholder="Enter email" id="emailInput">
                             </div>
+                            </label>
                         </div>
                     </div>
                 </div>
                 <div class="columns is-centered">
                     <div class="column">
                         <div class="field animated fadeInUp delay-1s" id="messageField" hidden>
-                            <label class="label">Message</label>
+                            <label class="label">Message
                             <div class="control">
-                                <textarea cols="30" rows="10" class="textarea">Enter a message</textarea>
+                                <textarea cols="30" rows="10" name="messageTextarea" class="textarea" id="messageTextarea">Enter a message</textarea>
                             </div>
+                            </label>
                         </div>
                     </div>
                 </div>
@@ -36,7 +39,7 @@
                     <div class="column is-one-third">
                         <div class="field animated fadeInUp delay-2s" id="submitButtonField" hidden>
                             <div class="control">
-                                <button class="button is-rounded" type="submit">Submit</button>
+                                <button type="submit" name="submitButton" class="button is-rounded" id="submitButton">Submit</button>
                             </div>
                         </div>
                     </div>
@@ -60,10 +63,28 @@ export default {
                 document.getElementById('submitButtonField').removeAttribute('hidden');
             }
 
+        },
+        handleSubmitButtonClick: function() {
+            var nameInput = document.getElementById('nameInput');
+            var emailInput = document.getElementById('emailInput');
+            var messageTextarea = document.getElementById('messageTextarea');
+            if (!nameInput.value) {
+                alert('Enter a name');
+                return;
+            }
+            if (!emailInput.value) {
+                alert('Enter an email');
+                return;
+            }
+            if (!messageTextarea.value) {
+                alert('Enter a message');
+                return;
+            }
         }
     },
     mounted() {
         document.addEventListener('scroll', this.handleScroll);
+        //document.getElementById('submitButton').addEventListener('click', this.handleSubmitButtonClick);
     }
 };
 </script>
