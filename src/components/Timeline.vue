@@ -48,7 +48,7 @@
                 <div class="timeline-marker is-info"></div>
                 <div class="timeline-content">
                     <p class="heading">Present</p>
-                    <p>Currently working as a software engineer at AT&T</p>
+                    <p>Currently trying freelance software engineering.</p>
                 </div>
             </div>
         </div>
