@@ -21,7 +21,6 @@
                                 Frameworks
                             </h4>
                             <span class="tag">Vue.js</span>
-                            <span class="tag">React.js</span>
                             <span class="tag">React Native</span>
                             <span class="tag">Bootstrap</span>
                             <span class="tag">Bulma CSS</span>
