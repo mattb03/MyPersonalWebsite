@@ -137,7 +137,7 @@ a {
     color: darkgrey;
 }
 .icon-default {
-    margin-top: 110%;
+    margin-top: 100%;
 }
 .hero-large {
     height: 100vh;
