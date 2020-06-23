@@ -34,37 +34,29 @@ export default {
             var viewportHeight = window.innerHeight;
 
             if (viewportWidth < 450 && viewportHeight < 850) {
-                document.getElementById('arrowIcon').classList.remove('icon-landscape-small');
 
                 // mobile portrait
                 document.getElementById('helloTitle').classList.add('is-3');
                 document.getElementById('introSubtitle').classList.add('is-4');
                 document.getElementById('arrowIcon').classList.add('fa-2x');
-                document.getElementById('arrowIcon').classList.add('icon-default');
             } else if (viewportWidth < 850 && viewportHeight < 450) {
-                document.getElementById('arrowIcon').classList.remove('icon-default');
 
                 // mobile landscape
                 document.getElementById('helloTitle').classList.add('is-3');
                 document.getElementById('introSubtitle').classList.add('is-4');
                 document.getElementById('arrowIcon').classList.add('fa-2x');
-                document.getElementById('arrowIcon').classList.add('icon-landscape-small');
             } else if (viewportWidth < 900 && viewportHeight > 1000) {
-                document.getElementById('arrowIcon').classList.remove('icon-landscape-small');
 
                 // tablet portrait
                 document.getElementById('helloTitle').classList.add('is-1');
                 document.getElementById('introSubtitle').classList.add('is-2');
                 document.getElementById('arrowIcon').classList.add('fa-4x');
-                document.getElementById('arrowIcon').classList.add('icon-default');
             } else if (viewportWidth > 1000 && viewportHeight < 900) {
-                document.getElementById('arrowIcon').classList.remove('icon-default');
 
                 // tablet landscape
                 document.getElementById('helloTitle').classList.add('is-1');
                 document.getElementById('introSubtitle').classList.add('is-2');
                 document.getElementById('arrowIcon').classList.add('fa-4x');
-                document.getElementById('arrowIcon').classList.add('icon-landscape-small');
             } else {
                 document.getElementById('helloTitle').classList.remove('is-3');
                 document.getElementById('introSubtitle').classList.remove('is-4');
@@ -73,7 +65,6 @@ export default {
                 document.getElementById('helloTitle').classList.add('is-1');
                 document.getElementById('introSubtitle').classList.add('is-2');
                 document.getElementById('arrowIcon').classList.add('fa-4x');
-                document.getElementById('arrowIcon').classList.add('icon-default');
             }
         },
 
@@ -88,31 +79,26 @@ export default {
             document.getElementById('helloTitle').classList.add('is-3');
             document.getElementById('introSubtitle').classList.add('is-4');
             document.getElementById('arrowIcon').classList.add('fa-2x');
-            document.getElementById('arrowIcon').classList.add('icon-default');
         } else if (viewportWidth < 850 && viewportHeight < 450) {
             // mobile landscape
             document.getElementById('helloTitle').classList.add('is-3');
             document.getElementById('introSubtitle').classList.add('is-4');
             document.getElementById('arrowIcon').classList.add('fa-2x');
-            document.getElementById('arrowIcon').classList.add('icon-landscape-small');
         } else if (viewportWidth < 900 && viewportHeight > 1000) {
             // tablet portrait
             document.getElementById('helloTitle').classList.add('is-1');
             document.getElementById('introSubtitle').classList.add('is-2');
             document.getElementById('arrowIcon').classList.add('fa-4x');
-            document.getElementById('arrowIcon').classList.add('icon-default');
         } else if (viewportWidth > 1000 && viewportHeight < 900) {
             // tablet landscape
             document.getElementById('helloTitle').classList.add('is-1');
             document.getElementById('introSubtitle').classList.add('is-2');
             document.getElementById('arrowIcon').classList.add('fa-4x');
-            document.getElementById('arrowIcon').classList.add('icon-landscape-small');
         } else {
             // desktop
             document.getElementById('helloTitle').classList.add('is-1');
             document.getElementById('introSubtitle').classList.add('is-2');
             document.getElementById('arrowIcon').classList.add('fa-4x');
-            document.getElementById('arrowIcon').classList.add('icon-default');
         }
         window.addEventListener('resize', this.handleResize);
     }
@@ -136,14 +122,13 @@ a {
 .subtitle {
     color: darkgrey;
 }
-.icon-default {
-    margin-top: 100%;
-}
+
 .hero-large {
     height: 100vh;
     background: url('../assets/mountain.jpeg');
     background-size: cover;
     background-position: center;
+
 }
 .hero-small {
     height: 100vh;
@@ -151,8 +136,11 @@ a {
     background-size: cover;
 }
 
-.icon-landscape-small {
-    margin-top: 45%;
+#arrowIcon {
+    position: absolute;
+    top: 70vh;
+    padding: 20px;
 }
+
 
 </style>
