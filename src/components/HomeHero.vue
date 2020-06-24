@@ -142,5 +142,17 @@ a {
     padding: 20px;
 }
 
+@media only screen and (min-width: 1100px) and (max-height: 300px) {
+    #arrowIcon {
+        top: 60vh;
+    }
+}
+
+@media only screen and (min-width: 1550px) and (max-height: 300px) {
+    #arrowIcon {
+        top: 50vh;
+    }
+}
+
 
 </style>
