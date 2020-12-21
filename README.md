@@ -5,9 +5,10 @@
 npm install
 ```
 
-### Compiles and hot-reloads for development
+### Compiles and serves 
 ```
-npm run serve
+Windows: vue serve src\main.js
+Unix Systems: vue serve src/main.js 
 ```
 
 ### Compiles and minifies for production
